@@ -1,0 +1,37 @@
+use map;
+
+DROP TABLE IF EXISTS tbl_User;
+CREATE TABLE tbl_User(
+   ID INT NOT NULL auto_increment PRIMARY KEY,
+   UserName VARCHAR(128)NOT NULL UNIQUE,
+   Password VARCHAR(128) NOT NULL,
+   Active CHAR(1),
+   AddedOn DATETIME NOT NULL,
+   AddedBy INT NOT NULL,
+   ModifiedOn DATETIME,
+   ModifiedBy INT,
+   DeletedOn DATETIME,
+   DeletedBy INT
+);
+
+INSERT INTO tbl_User(ID, UserName, Password, Active, AddedOn, AddedBy) VALUES(1,'system@map.co.id', md5('localhost'), 'Y', '2016-02-02 18:24:00', 1);
+
+DROP TABLE IF EXISTS tbl_Employe;
+CREATE TABLE tbl_Employe(
+   ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   Name VARCHAR(256),
+   JenisKelamin CHAR(9),
+   TanggalLahir DATE,
+   Alamat VARCHAR(256),
+   Email VARCHAR(128) NOT NULL UNIQUE,
+   MulaiKerja DATE,
+   Active CHAR(1),
+   AddedOn DATETIME NOT NULL,
+   AddedBy INT NOT NULL,
+   ModifiedOn DATETIME,
+   ModifiedBy INT,
+   DeletedOn DATETIME,
+   DeletedBy INT
+);
+
+
